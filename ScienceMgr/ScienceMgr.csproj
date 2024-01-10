@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{239A2CA9-4E08-4C19-A152-53F06E56A966}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ScienceMgr</RootNamespace>
+    <AssemblyName>ScienceMgr</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\ArticleListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ArticleListItem.Designer.cs">
+      <DependentUpon>ArticleListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbContext\ApplicationDbContext.cs" />
+    <Compile Include="Extensions\EnumExtension.cs" />
+    <Compile Include="Forms\Article\AddArticleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Article\AddArticleDialog.Designer.cs">
+      <DependentUpon>AddArticleDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Article\ArticleDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Article\ArticleDetailDialog.Designer.cs">
+      <DependentUpon>ArticleDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Article\EditArticleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Article\EditArticleDialog.Designer.cs">
+      <DependentUpon>EditArticleDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GraduationTopic\AddGraduationTopicDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GraduationTopic\AddGraduationTopicDialog.Designer.cs">
+      <DependentUpon>AddGraduationTopicDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GraduationTopic\EditGraduationTopicDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GraduationTopic\EditGraduationTopicDialog.Designer.cs">
+      <DependentUpon>EditGraduationTopicDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Research\AddResearchDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Research\AddResearchDialog.Designer.cs">
+      <DependentUpon>AddResearchDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Research\EditResearchDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Research\EditResearchDialog.Designer.cs">
+      <DependentUpon>EditResearchDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Research\ResearchDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Research\ResearchDetailDialog.Designer.cs">
+      <DependentUpon>ResearchDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\AddNewUserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\AddNewUserDialog.Designer.cs">
+      <DependentUpon>AddNewUserDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\EditUserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\EditUserDialog.Designer.cs">
+      <DependentUpon>EditUserDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312151350321_Initial.cs" />
+    <Compile Include="Migrations\202312151350321_Initial.designer.cs">
+      <DependentUpon>202312151350321_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\GraduationTopic.cs" />
+    <Compile Include="Models\Research.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Pages\ArticlePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\ArticlePage.Designer.cs">
+      <DependentUpon>ArticlePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GraduationTopicPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\GraduationTopicPage.Designer.cs">
+      <DependentUpon>GraduationTopicPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HomePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\ResearchPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\ResearchPage.Designer.cs">
+      <DependentUpon>ResearchPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\UserPage.Designer.cs">
+      <DependentUpon>UserPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Abstraction\IArticleRepository.cs" />
+    <Compile Include="Repositories\Abstraction\IGraduationTopicRepository.cs" />
+    <Compile Include="Repositories\Abstraction\IResearchRepository.cs" />
+    <Compile Include="Repositories\Abstraction\IUserRepository.cs" />
+    <Compile Include="Repositories\Implementation\ArticleRepository.cs" />
+    <Compile Include="Repositories\Implementation\GraduationTopicRepository.cs" />
+    <Compile Include="Repositories\Implementation\ResearchRepository.cs" />
+    <Compile Include="Repositories\Implementation\UserRepository.cs" />
+    <EmbeddedResource Include="Controls\ArticleListItem.resx">
+      <DependentUpon>ArticleListItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Article\AddArticleDialog.resx">
+      <DependentUpon>AddArticleDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Article\ArticleDetailDialog.resx">
+      <DependentUpon>ArticleDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Article\EditArticleDialog.resx">
+      <DependentUpon>EditArticleDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GraduationTopic\AddGraduationTopicDialog.resx">
+      <DependentUpon>AddGraduationTopicDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GraduationTopic\EditGraduationTopicDialog.resx">
+      <DependentUpon>EditGraduationTopicDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Research\AddResearchDialog.resx">
+      <DependentUpon>AddResearchDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Research\EditResearchDialog.resx">
+      <DependentUpon>EditResearchDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Research\ResearchDetailDialog.resx">
+      <DependentUpon>ResearchDetailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\AddNewUserDialog.resx">
+      <DependentUpon>AddNewUserDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\EditUserDialog.resx">
+      <DependentUpon>EditUserDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312151350321_Initial.resx">
+      <DependentUpon>202312151350321_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ArticlePage.resx">
+      <DependentUpon>ArticlePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\GraduationTopicPage.resx">
+      <DependentUpon>GraduationTopicPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ResearchPage.resx">
+      <DependentUpon>ResearchPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserPage.resx">
+      <DependentUpon>UserPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_home_512px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_contacts_512px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graduate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\research.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\article.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\75-graduate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\75-people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\75-research.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\128-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\128-article.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\128-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\128-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\128-graduate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\128--people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\128-reseach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\512-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\512-article2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\512-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\512-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\512-graduate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\512-people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\512-research.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\32-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\32-article2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\32-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\32-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\32-graduate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\32-people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\32-research.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\75-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\75-article.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\75-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\75-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\128-home.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
